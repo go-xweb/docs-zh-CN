@@ -1,4 +1,4 @@
-# Xweb
+# Go Xweb
 
 * [简介](01.简介/README.md)
 * [路由](02.路由/README.md)

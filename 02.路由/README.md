@@ -18,9 +18,9 @@ func (a *MainAction) Hello() error {
 如上代码定义了一个简单的Action，实现了对`/hello`请求的响应。当访问这个url时，会返回
 `Hello world!`。更详细的讲解后面再继续，我们先看下如何来运行这个Action。
 
-# 路由
+# 添加路由
 
-添加路由主要由三个函数可以使用：
+添加路由主要有三个函数可以使用：
 
 * AddRouter
 添加一个路由到App下，并指定一个根路径。
@@ -58,7 +58,7 @@ Mapper的路由规则有两种形式：
 这时，这个路由即为Mapper的名字，对应执行的方法名为Title（mapper变量名）；如：
 ```Go
 type MainAction struct {
-    xweb.Action
+    *xweb.Action
     
     login xweb.Mapper
 }
@@ -72,12 +72,12 @@ func (this *MainAction) Login() {
 * 按照Field对应的Tag语法
 
 Tag语法用空格分为如下几部分：
-GET|POST        方法名，多个方法中间用|分隔
-/(.*)           路径名，可以采用正则表达式
+* GET|POST        方法名，多个方法中间用|分隔
+* /(.*)           路径名，可以采用正则表达式
 
 ```Go
 type MainAction struct {
-    xweb.Action
+    *xweb.Action
     
     hello xweb.Mapper `xweb:"GET|POST /(.*)`
 }

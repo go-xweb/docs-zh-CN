@@ -15,7 +15,7 @@ func (a *MainAction) Hello() error {
 
 ```
 
-如上代码定义了一个简单的Action，实现了对`/login`请求的响应。当访问这个url时，会返回
+如上代码定义了一个简单的Action，实现了对`/hello`请求的响应。当访问这个url时，会返回
 `Hello world!`。更详细的讲解后面再继续，我们先看下如何来运行这个Action。
 
 # 路由
